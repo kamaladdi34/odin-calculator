@@ -18,29 +18,39 @@ operationButtons.forEach(button => {
     })
 })
 
-function manageNumberInput(input)
-{
-    operation == '' ? firstOperand += input : secondOperand += input;
+function manageNumberInput(input){
+    if(operation == '' && input == '.' && firstOperand.includes('.'))
+    {
+        return ;
+    }
+    if(operation != '' && input == '.' && secondOperand.includes('.'))
+    {
+        return ;
+    }
+    if(operation == ''){
+        firstOperand += input;
+    } else {
+        secondOperand += input;
+    }
     inputDisplay.textContent += input;
     console.log(firstOperand,operation,secondOperand);
 }
 
-function manageOperationInput(input)
-{
-    if(input == '=' && firstOperand && operation && secondOperand)
-    {
+function manageOperationInput(input){
+    if(input == '=' && firstOperand && operation && secondOperand){
         resultDisplay.textContent = calculateOperation(firstOperand,operation,secondOperand);
         return
     }
     if(firstOperand.replace(/[-*+/]+/g,'') != ''){
         inputDisplay.textContent += input;
         operation = input;
-    } else if(input != '/'){
+    } else if(input != '/' && input != 'x'){
         firstOperand = input;
         inputDisplay.textContent = input;
     }
     console.log(firstOperand,operation,secondOperand);
 }
+
 function calculateOperation(firstOperand,operation,secondOperand)
 {
     switch(operation){
