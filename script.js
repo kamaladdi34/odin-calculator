@@ -2,6 +2,7 @@ let numberButtons = document.querySelectorAll('.number');
 let operationButtons = document.querySelectorAll('.operator');
 let inputDisplay = document.querySelector('.display .input');
 let resultDisplay = document.querySelector('.display .result');
+let clearBUtton = document.querySelector('.clear');
 let firstOperand = '';
 let secondOperand = '';
 let operation = '';
@@ -18,20 +19,32 @@ operationButtons.forEach(button => {
     })
 })
 
+clearBUtton.addEventListener('click',event => {
+    clearCalculator();
+})
+
+function clearCalculator(){
+    firstOperand = operation = secondOperand = '';
+    resultDisplay.textContent = inputDisplay.textContent = '';
+}
+
 function manageNumberInput(input){
     if(operation == '' && input == '.' && firstOperand.includes('.'))
     {
         return ;
     }
+
     if(operation != '' && input == '.' && secondOperand.includes('.'))
     {
         return ;
     }
+
     if(operation == ''){
         firstOperand += input;
     } else {
         secondOperand += input;
     }
+
     inputDisplay.textContent += input;
     console.log(firstOperand,operation,secondOperand);
 }
@@ -41,6 +54,7 @@ function manageOperationInput(input){
         resultDisplay.textContent = calculateOperation(firstOperand,operation,secondOperand);
         return
     }
+
     if(firstOperand.replace(/[-*+/]+/g,'') != ''){
         inputDisplay.textContent += input;
         operation = input;
@@ -48,6 +62,7 @@ function manageOperationInput(input){
         firstOperand = input;
         inputDisplay.textContent = input;
     }
+
     console.log(firstOperand,operation,secondOperand);
 }
 
