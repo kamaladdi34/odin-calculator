@@ -51,9 +51,8 @@ body{
     border-radius: 100px;
 }
 .buttons button:hover{
-    background-color: rgb(255, 142, 82);
+    background-color: rgb(246, 246, 246);
     cursor: pointer;
-    color: white;
 }
 .buttons .clear ,.buttons .undo{
     width: 160px;
