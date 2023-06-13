@@ -55,3 +55,6 @@ body{
     cursor: pointer;
     color: white;
 }
+.buttons .clear ,.buttons .undo{
+    width: 160px;
+}
