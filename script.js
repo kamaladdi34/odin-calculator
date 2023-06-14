@@ -69,20 +69,20 @@ function manageOperationInput(input){
     if(input == '=' && firstOperand && operation && secondOperand){
         result = calculateOperation(firstOperand,operation,secondOperand);
         resultDisplay.textContent = result;
-        return
+        return;
+    }
+    
+    if(firstOperand && operation && secondOperand){
+        result = calculateOperation(firstOperand,operation,secondOperand);
+        firstOperand = `${result}`;
+        secondOperand = '';
+        inputDisplay.textContent = `${result}`;
+        resultDisplay.textContent = result;
+        result = '';
     }
 
     if(firstOperand.replace(/[-*+/]+/g,'') != ''){
         inputDisplay.textContent += input;
-        if(firstOperand && operation && secondOperand)
-        {
-            result = calculateOperation(firstOperand,operation,secondOperand);
-            firstOperand = `${result}`;
-            secondOperand = '';
-            inputDisplay.textContent = `${result}${input}`;
-            resultDisplay.textContent = result;
-            result = '';
-        }
         operation = input;
     } else if(input != '/' && input != 'x'){
         firstOperand = input;
