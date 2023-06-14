@@ -97,17 +97,18 @@ function manageOperationInput(input){
 function calculateOperation(firstOperand,operation,secondOperand){
     switch(operation){
         case '+':
-            return +firstOperand + +secondOperand;
+            return round(+firstOperand + +secondOperand);
             break;
         case '-':
-            return firstOperand - secondOperand;
+            return round(firstOperand - secondOperand);
             break;
         case '/':
             if(secondOperand == '0') return 0;
-            return firstOperand / secondOperand;
+            return round(firstOperand / secondOperand);
             break;
         case 'x':
-            return firstOperand * secondOperand;
+            return round(firstOperand * secondOperand);
             break;
     }
 }
+const round = number => Math.round(number*10000)/10000;
