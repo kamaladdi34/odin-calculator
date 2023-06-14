@@ -55,7 +55,15 @@ function manageNumberInput(input){
     if(operation != '' && input == '.' && secondOperand.includes('.')){
         return ;
     }
-
+    let addZero = false;
+    if(operation == '' && input == '.' && firstOperand == ''){
+        firstOperand += '0'
+        input = 0 + input;
+    }
+    if(operation != '' && input == '.' && secondOperand == ''){
+        secondOperand += '0';
+        input = 0 + input;
+    }
     if(operation == ''){
         firstOperand += input;
     } else {
