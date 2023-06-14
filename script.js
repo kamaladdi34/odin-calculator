@@ -103,6 +103,7 @@ function calculateOperation(firstOperand,operation,secondOperand)
             return firstOperand - secondOperand;
             break;
         case '/':
+            if(secondOperand == '0') return 0;
             return firstOperand / secondOperand;
             break;
         case 'x':
