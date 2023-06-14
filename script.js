@@ -82,13 +82,14 @@ function manageOperationInput(input){
         secondOperand = '';
         inputDisplay.textContent = `${result}`;
         resultDisplay.textContent = result;
+        operation = '';
         result = '';
     }
 
-    if(firstOperand.replace(/[-*+/]+/g,'') != ''){
+    if(firstOperand.replace(/[-*+/]+/g,'') != '' && operation == ''){
         inputDisplay.textContent += input;
         operation = input;
-    } else if(input != '/' && input != 'x'){
+    } else if(input != '/' && input != 'x' && operation == ''){
         firstOperand = input;
         inputDisplay.textContent = input;
     }
