@@ -90,8 +90,7 @@ function manageOperationInput(input){
     }
 }
 
-function calculateOperation(firstOperand,operation,secondOperand)
-{
+function calculateOperation(firstOperand,operation,secondOperand){
     switch(operation){
         case '+':
             return +firstOperand + +secondOperand;

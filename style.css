@@ -21,11 +21,12 @@ body{
 }
 .input ,.result{
     height: 90px;
-    background-color: rgb(255, 142, 82);
+    background-color: rgb(220, 255, 78);
     padding: 10px;
     padding-right: 30px;
     text-align: right;
-    color: rgb(255, 255, 255);
+    color: rgb(88, 123, 0);
+    font-weight: bold;
 }
 .input{
     font-size: 25px;
