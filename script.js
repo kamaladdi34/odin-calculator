@@ -2,7 +2,7 @@ let numberButtons = document.querySelectorAll('.number');
 let operationButtons = document.querySelectorAll('.operator');
 let inputDisplay = document.querySelector('.display .input');
 let resultDisplay = document.querySelector('.display .result');
-let clearBUtton = document.querySelector('.clear');
+let clearButton = document.querySelector('.clear');
 let undoBUtton = document.querySelector('.undo');
 let firstOperand = '';
 let secondOperand = '';
@@ -20,7 +20,7 @@ operationButtons.forEach(button => {
     })
 })
 
-clearBUtton.addEventListener('click',event => {
+clearButton.addEventListener('click',event => {
     clearCalculator();
 })
 
