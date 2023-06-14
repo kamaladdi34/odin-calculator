@@ -63,7 +63,6 @@ function manageNumberInput(input){
     }
 
     inputDisplay.textContent += input;
-    console.log(firstOperand,operation,secondOperand);
 }
 
 function manageOperationInput(input){
@@ -89,8 +88,6 @@ function manageOperationInput(input){
         firstOperand = input;
         inputDisplay.textContent = input;
     }
-
-    console.log(firstOperand,operation,secondOperand);
 }
 
 function calculateOperation(firstOperand,operation,secondOperand)
