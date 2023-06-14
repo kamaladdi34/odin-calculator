@@ -71,6 +71,10 @@ function manageOperationInput(input){
         resultDisplay.textContent = result;
         return;
     }
+    else if(input == '=')
+    {
+        return;
+    }
     
     if(firstOperand && operation && secondOperand){
         result = calculateOperation(firstOperand,operation,secondOperand);
